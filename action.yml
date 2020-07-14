@@ -2,12 +2,17 @@ name: 'Container Action Template (PowerShell edition)'
 description: 'Get started with Container actions using PowerShell'
 author: 'TylerLeonhardt'
 inputs: 
-  myInput:
-    description: 'Input to use'
-    required: false
-    default: 'world'
+  subscriptionName:
+    description: 'Subscription to use'
+    required: true
+  planName:
+    description: 'plan to use'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.myInput }}
+    - -SubscriptionName
+    - ${{ inputs.subscriptionName }}
+    - -PlanName
+    - ${{ inputs.planName }}

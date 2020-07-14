@@ -1,0 +1,13 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: Run
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: TylerLeonhardt/container-action-vso@master
