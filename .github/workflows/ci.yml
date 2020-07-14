@@ -11,3 +11,6 @@ jobs:
 
     steps:
     - uses: TylerLeonhardt/container-action-vso@master
+      with:
+        subscriptionName: ${{ secrets.SUBSCRIPTIONNAME }}
+        planName: ${{ secrets.PLANNAME }}
